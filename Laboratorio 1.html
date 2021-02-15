@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LAB 1</title>
+    <h1>Laboratorio 1</h1>
+    <hr/>
+  </head>
+
+  <body>
+
+    <h2>¿Cuál es la diferencia entre Internet y la World Wide Web?</h2>
+    <p>Internet resulta de una conexión masiva de computadoras, mientras que la WWW es una colección masiva de páginas dentro de internet, el internet es usado para entrar a la WWW.</p>
+
+    <h2>¿Cuáles son las partes de un URL?</h2>
+      <ul>
+        <dt>Protocolo HTTPS</dt>
+          <dd>Hypertext Transfer Protocol, permite transmitir información dentro de Internet. <p><strong>https</strong>://www.ejemplodesubdominio.com</p></dd>
+
+        <dt>Subdominio</dt>
+          <dd>https://<strong>www</strong>.ejemplodesubdominio.com</dd>
+
+        <dt>Dominio</dt>
+          <dd>Nombre del Dominio Web https://www.<strong>ejemplodesubdominio</strong>.com</dd>
+
+        <dt>TLD (Top Domain Level)</dt>
+          <dd>https://www.ejemplodesubdominio<strong>.com</strong></dd>
+
+        <dt>Ruta</dt>
+          <dd>https://www.ejemplo/<strong>search</strong></dd>
+
+        <dt>Parámetro</dt>
+          <dd>https://www.ejemplo/search<strong>?item=vw+delfin</strong></dd>
+        </ul>
+
+    <h2>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h2>
+      <p><strong>GET</strong>: solicitar información del sitio solicitado, no la altera de ninguna forma.</p>
+      <p><strong>HEAD</strong>: GET pero no debe de contener infomación que fuera dentro del "body" del html, pero lo que regresa son headers
+      como si se hubiera hecho uso de un GET, teóricamente sire para determinar si un recurso está presente antes de hacer
+      uso del GET.</p>
+      <p><strong>POST</strong>: enviar información a un servidor y crear un nuevo recurso.</p>
+      <p><strong>PUT</strong>: actualzar un recurso ya creado con POST. Editar prácticamente.</p>
+      <p><strong>PATCH</strong>: modificación parcial a un recurso ya existente.</p>
+      <p><strong>DELETE</strong>: eliminar el recurso seleccionado.</p>
+
+    <h2>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h2>
+      <p>POST, se envía la información para el inicio de sesión.</p>
+
+    <h2>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h2>
+      <p>GET, se está solicitando a la página su despliegue en nuestro buscador.</p>
+
+    <h2>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h2>
+      <p>Todo bien, todo correcto, y yo que me alegro. El método ha funcionado.</p>
+
+    <h2>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h2>
+      <p>El servidor no pudo encontrar el recurso solicitado, la url no es reconocida por el servidor o el recurso dentro de la sección de búsqueda no está. También puede ser usado en vez del código 403 FORBIDDEN para ocultar la existencia de páginas a las que no se tiene acceso.</p>
+      <p>Volviendo a la pregunta, no. El error es del usuario por haber ingresado mal la información o por el hecho de que no debería de estar en ese sitio.</p>
+
+    <h2>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h2>
+      <p>Si, el rango de los 500 es para errores dentro del HTML, por tanto, nuestros.</p>
+
+    <h2>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h2>
+      <p>Que ya no es válido en las convenciones actuales de programación en html, funciona pero hay una forma óptima de hacerlo. <"applet">,<"basefont"></p>
+
+    <h2>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h2>
+      <p>Existen muchas pero una de las mayores, es el hecho del formato por capas que se ha definido, reduciendo de sobremanera y desinsentivando el código espagueti.</p>
+
+    <h2>¿Qué componentes de estructura y estilo tiene una tabla?</h2>
+      <p>Prácticamente los mismos que tendrías en una tabla de excel, columnas con títulos, filas de información, "pading, bordes más oscuros, "fusionar celdas", además de que el texto dentro de la misma se puede editar como cualquier otro texto en html."</p>
+      <p>Lo dicho, como una tabla de excel.</p>
+
+    <h2>¿Cuáles son los principales controles de una forma HTML5?</h2>
+      <p>Las páginas que hacen uso de html5 hacen uso de una cantidad bastante grande de controles, como ponerlos todos aquí sería imposible, hago referencia al cheat sheet de html5 que se nos puso en el laboratorio y al handybook de html. Nice.</p>
+
+    <h2>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)</h2>
+      <p>Opera GX, 474 de 555. Nice.</p>
+
+    <h2>Sobre el ciclo de vida y desarrollo de los sistemas de información:</h2>
+    <h3>¿Cuál es el ciclo de vida de los sistemas de información?</h3>
+      <p>Existen varias interpretaciones, pero me agrada la que indica (Planificación -> Análisis -> Diseño -> Implementación -> Mantenimiento -> Vuelta a empezar).</p>
+    <h3>¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
+      <p>Parte de la respuesta anterior (Definición de necesidades -> Análisis -> Diseño -> Codificación -> Pruebas -> Validación -> Mantenimiento y Evolución -> Vuelta a empezar).</p>
+
+
+
+  </body>
+</html>
