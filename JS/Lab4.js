@@ -1,4 +1,4 @@
-let reloj = 0;
+
 
 function problema1(){
     let value = window.prompt("Buenas, ingresar los números");
@@ -26,20 +26,19 @@ function escribir1(number,cont1,cont2,cont3){
     document.close();
 }
 
+
+
 function problema2(){
     let randomNumber1 = Math.floor(Math.random() * 11);
     let randomNumber2 = Math.floor(Math.random() * 11);
     let respuesta = randomNumber1+randomNumber2;
-    setInterval(contador, 1000);
+    let horaI = new Date();
+
     let value = window.prompt("Buenas, ingresar el resultado de la suma de "+ randomNumber1 + " y " + randomNumber2 + ", gracias.");
-    escribir2(respuesta,value, reloj);
+    escribir2(respuesta, value, horaI);
 }
 
-function contador(){ //Me rendiré momentaneamente con el contador, solicitaré ayuda.
-    reloj = reloj + 1;
-}
-
-function escribir2(respuesta, value, reloj){
+function escribir2(respuesta, value, horaI){
     document.open();
     document.write("Respuesta introducida: " + value +"<p></p>");
     if(respuesta==value){ //Comprendo que se está comparando un string y un int, por tanto me funciona en esta ocasión el uso del == en vez del ===, nice.
@@ -48,7 +47,10 @@ function escribir2(respuesta, value, reloj){
     else{
         document.write("Lamentablemente "+value +" no era la respuesta, la respuesta era: " +respuesta+  ", nada que hacer.<p></p>");
     }
-    document.write("El tiempo en contestar fue de: " + reloj + " segundos.");
+    let horaF = new Date() - horaI;
+    horaF = horaF/1000;
+    document.write("El tiempo en contestar fue de: " + horaF + " segundos.");
+    
     document.close();
 }
 
@@ -74,38 +76,38 @@ function problema3(){
 }
 
 function problema4(){
-    let iterations = window.prompt("Saludos, ingresa el número de arrays que tendrá la matrix.")
-    let matrix = []
+    let iterations = window.prompt("Saludos, ingresa el número de arrays que tendrá la matrix.");
+    let matrix = [];
     for (i=0;i < iterations;i++){
-        let array = window.prompt("Ingresa los valores del array #" + (i+1) + " de la matrix separándolos con espacio.")
-        array.split(" ")
-        matrix[i] = array
+        let array1 = window.prompt("Ingresa los valores del array #" + (i+1) + " de la matrix separándolos con espacio.");
+        array1.split(" ");
+        matrix[i] = array1;
     }
-    document.write("<p>Buenas: </p>")
+    document.write("<p>Buenas: </p>");
 
     for(i=0;i < iterations;i++){
-        document.write("<p></p>"+matrix[i]+" - Promedio: " + average(matrix[i]))
+        document.write("<p></p>"+matrix[i]+" - Promedio: " + average(matrix[i]));
     }
 }
 
 function add(total, value){
-    return total + value 
+    return total + value;
 }
 
-function average(array){
-    let suma = 0
-    let avg = 0
-    array = parseFloat(array,10) //Muchos intentos de muchas formas.
-    suma = array.reduce(add, 0)
-    avg = suma/array.length
-    return avg
+function average(array1){
+    let suma = 0;
+    let avg = 0;
+    array = parseFloat(array1,10); //Muchos intentos de muchas formas.
+    suma = array1.reduce(add, 0);
+    avg = suma/array.length;
+    return avg;
 }
 
 function problema5(){
-    let userInput = window.prompt("Buenas, favor de ingresar el número.")
-    let array = []
-    array = userInput.split("")
-    array = array.reverse()
+    let userInput = window.prompt("Buenas, favor de ingresar el número.");
+    let array = [];
+    array = userInput.split("");
+    array = array.reverse();
     array = array.join("") //nueva función interesante, convertir un array de strings a un solo string 
     array = parseFloat(array,10)
     array = array * Math.sign(userInput)

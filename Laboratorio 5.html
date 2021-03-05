@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>LAB 5, Nice.</title>
+  <meta name="Laboratorio 5, ya era hora" content="Ángel Flores Bermúdez">
+  <link rel="stylesheet" href="css/main.css">
+<!-- Esto está bien pero la mejor opción parece ser, la creación de archivos css de estilos.
+  <style type="text/css">
+
+  </style>
+-->
+</head>
+
+  <header>
+    <img src="css/kamina.png" alt="Kamina Glasses">
+    <h1>Laboratorio 5</h1>
+  </header>
+
+<body>
+  <h2>Ejercicios LAB5</h2>
+  <main>
+    
+    <!--<button id="show" class="button" onclick="display()">Nice</button>-->
+
+    <section class="Prueba 1">
+    <div class="aSubmit">
+      <p>Buenas, Validador de contraseñas, en este caso, sólo usuarios.</p>
+      
+      <label for="fieldUser">Dar de alta nuevo usuario:</p>
+      <input type="text" id="fieldUser" class="fieldUserRegistry">
+      <input type="submit" value="Submit" class="guessSubmitRegistry" onclick="newUser()">
+      
+    </div>
+
+    <div class="aResults">
+      <p class="username"></p>
+      <p class="validacionNew"></p>
+    </div>
+
+    <div class="bSubmit"> 
+      <p>Iniciar Sesión</p> 
+      <label for="fieldUser">Nombre de Usuario:</p>
+      <input type="text" id="fieldUser" class="fieldUserLogIn">
+      <input type="submit" value="Submit" class="guessSubmitLogIn" onclick="iniciarSesion()">
+      
+    </div>
+
+    <div class="bResults">
+      <p class="validacionOld"></p>
+    </div>
+
+
+  </section>
+  
+  <section class="Prueba2">
+
+    <div class="openShop"></div>
+
+    <div class="shop">
+      <p><strong>Bienvenido a la tienda virtual de, em, Yes!.</strong></p>
+      <img src="https://images-na.ssl-images-amazon.com/images/I/51f3a9bZL2L._AC_SL1001_.jpg" alt="HnK Dog">
+      <p id="perrito" value="299" class="product">Perrito Cute Esponjado $299</p>
+      <p class="stockActual"></p>
+      <p><button id="accionesComprar" class="button" onclick="tienda()">Agregar al Carrito</button> 
+         <button id="accionesComprar-" class="button" onclick="tienda()">-</button>
+      </p>
+      <span class="confirmation"></span>
+      <p class="enCarrito"></p>
+      <span class="costos"></span>
+      
+    </div>
+  
+  
+  </section>
+  <script src="js/Lab5.js"></script>
+  </main>
+</body>
+</html>
+
+
