@@ -42,6 +42,6 @@ function promedio_de_array(){ //Buenas, crea un array de 0-10 números con valor
 function escribirEnArchivoDeTexto(){
     let palabraClave = "Delfín Acuático";
     const filesystem = require("fs");
-    filesystem.writeFileSync("Laboratorio 6/output.txt", palabraClave);
+    filesystem.writeFileSync("Laboratorio 8/output.txt", palabraClave);
     console.log("Buenas, se ha escrito en el documento lo siguiente: " + palabraClave);
 }
