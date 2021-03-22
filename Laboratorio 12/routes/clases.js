@@ -1,5 +1,7 @@
 const clases = ["Saber", "Archer", "Lancer"];
 
+const path = require("path");
+
 const { request, response } = require('express');
 const express = require('express');
 
@@ -12,7 +14,7 @@ router.get("/clases/nueva-clase",(request, response, next)=>{
 router.post("/clases/nueva-clase",(request, response, next)=>{
     console.log(request.body.nombre);
     clases.push(request.body.nombre);
-    response.send("<h1>Personaje Guardado, nice</h1>");
+    response.redirect("/clases");
     console.log(clases);
 });
 

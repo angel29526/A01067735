@@ -1,5 +1,5 @@
 {
-  "name": "laboratorio-11",
+  "name": "laboratorio-12",
   "version": "1.0.0",
   "description": "Node+Express",
   "main": "app.js",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "node",
-    "express"
+    "express",
+    "dinamicHTML"
   ],
   "author": "Ángel Flores Bermúdez",
   "license": "ISC",
@@ -24,6 +25,8 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "materialize-css": "^1.0.0-rc.2",
     "nodemon": "^2.0.7"
-  }
+  },
+  "devDependencies": {}
 }
