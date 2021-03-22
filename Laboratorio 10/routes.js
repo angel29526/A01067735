@@ -45,10 +45,10 @@ const requestHandler = (request, response) =>{
 
     else if (request.url === "/nueva-clase" && request.method === "POST"){
         const datos = [];
-        request.on("data",(dato => {
+        request.on("data",(dato) => {
             console.log(dato);
             datos.push(dato);
-        }))
+        });
         return request.on("end",()=>{
             const datos_completos = Buffer.concat(datos).toString();
             console.log(datos_completos);
@@ -56,6 +56,8 @@ const requestHandler = (request, response) =>{
             clases.push(nueva_clase);
             console.log(nueva_clase);
             console.log(clases);
+            response.statusCode = 302;
+            response.setHeader("Location","/clases");
             return response.end();
         });
     }
