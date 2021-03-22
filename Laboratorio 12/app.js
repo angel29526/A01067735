@@ -9,17 +9,17 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require("path");
 
-//Motor de vista
+//Motor de vista EJS
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const misRutas = require("./routes/clases");
 
-//Middleware
+//Body Parser
 app.use(bodyParser.urlencoded({extended: false}));
 
 //Para acceder a los recursos de la carpeta public.
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use((request, response, next) => {
     console.log('Middleware!');

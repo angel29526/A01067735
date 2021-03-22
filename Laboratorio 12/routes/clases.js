@@ -2,13 +2,13 @@ const clases = ["Saber", "Archer", "Lancer"];
 
 const path = require("path");
 
-const { request, response } = require('express');
+
 const express = require('express');
 
 const router = express.Router();
 
-router.get("/clases/nueva-clase",(request, response, next)=>{
-    response.send("<h1>Nueva clase</h1><body><h1>Agregar nueva clase</h1><form action='nueva-clase' method='POST'><input type='text' name='nombre'><input type='submit' value='Submit'></form>");
+router.get('/clases/nueva-clase',(request, response, next)=>{
+    response.render('nuevaClase', {listaClases: clases});
 });
 
 router.post("/clases/nueva-clase",(request, response, next)=>{
@@ -18,13 +18,8 @@ router.post("/clases/nueva-clase",(request, response, next)=>{
     console.log(clases);
 });
 
-router.use('/clases',(request, response, next) => {
-    let htmlClases = "<h1>Clases</h1><h2><ul>";
-    for (let clase of clases){
-        htmlClases += "<li>" + clase + "</li>";
-    }
-    htmlClases += "</h2></ul>";
-    response.send(htmlClases); 
+router.get('/clases',(request, response, next) => {
+    response.render('clases', {listaClases: clases});
 });
 
 router.get('/',(request, response, next)=>{
@@ -34,7 +29,7 @@ router.get('/',(request, response, next)=>{
 //404
 router.get('*', (request, response, next) => {
     response.statusCode = 404;
-    response.send("<h1>Nada que ver por aquí, fuera.</h1>"); 
+    response.render("<h1>Nada que ver por aquí, fuera.</h1>"); 
 });
 
 module.exports = router;
