@@ -24,6 +24,7 @@
   "homepage": "https://github.com/angel29526/A01067735-tc2005b_labs.git)#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "materialize-css": "^1.0.0-rc.2",
     "nodemon": "^2.0.7"

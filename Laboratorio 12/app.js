@@ -9,6 +9,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require("path");
 
+//Motor de vista
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
 const misRutas = require("./routes/clases");
 
 //Middleware
