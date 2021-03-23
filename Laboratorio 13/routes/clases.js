@@ -1,23 +1,14 @@
-const clases = ["Saber", "Archer", "Lancer"];
+const express = require('express');
+
+const router = express.Router();
 
 const path = require("path");
 
 const clasesController = require('../controllers/clases_controller');
 
-const express = require('express');
+router.get('/clases/nueva-clase', clasesController.getNuevaClase);
 
-const router = express.Router();
-
-router.get('/clases/nueva-clase',(request, response, next)=>{
-    response.render('nuevaClase', {listaClases: clases});
-});
-
-router.post("/clases/nueva-clase",(request, response, next)=>{
-    console.log(request.body.nombre);
-    clases.push(request.body.nombre);
-    response.redirect("/clases");
-    console.log(clases);
-});
+router.post("/clases/nueva-clase", clasesController.postNuevaClase);
 
 router.get('/clases', clasesController.get);
 
