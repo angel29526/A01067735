@@ -1,5 +1,5 @@
-const { fetchAll } = require('./models/clase');
-const Clase = require('./models/clase');
+const { fetchAll } = require('../models/clase');
+const Clase = require('../models/clase');
 
 exports.getNuevaClase = (request, response, next)=>{
     response.render('nuevaClase', {
