@@ -18,6 +18,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const misRutas = require("./routes/clases");
+const rutasUsers = require("./routes/users");
 
 //Body Parser
 app.use(bodyParser.urlencoded({extended: false}));
@@ -34,6 +35,8 @@ app.use((request, response, next) => {
 app.get("/lab",(request, response, next)=>{
     response.sendFile(path.join(__dirname, 'views', 'Laboratorio 6.html'));
 });
+
+app.use("/users/", rutasUsers);
 
 app.use("/", misRutas);
             
