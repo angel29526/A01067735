@@ -13,7 +13,7 @@ exports.postNuevaClase = (request, response, next)=>{
     nueva_clase.save();
     console.log(fetchAll());
 
-    response.setHeader("Set-Cookie", ["ultimo_personaje=" + nueva_clase.nombre]);
+    response.setHeader("Set-Cookie", ["ultima_clase=" + nueva_clase.nombre +"; HttpOnly"]);
 
     response.redirect("/clases");
 };
@@ -23,7 +23,11 @@ exports.get = (request, response, next) => {
 
 
     console.log("La última clase registrada fue: " + request.get("Cookie"));
+    //Sin cokie-parser
     console.log(request.get("Cookie").split("=")[1])
+    //Con cookie-parser
+    console.log(request.cookies);
+    console.log(request.cookies.ultima_clase);
 
     response.render('clases', {
         listaClases: clases,
