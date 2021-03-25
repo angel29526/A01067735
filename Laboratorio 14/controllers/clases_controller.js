@@ -3,7 +3,8 @@ const Clase = require('../models/clase');
 
 exports.getNuevaClase = (request, response, next)=>{
     response.render('nuevaClase', {
-        titulo: "Nueva Clase"
+        titulo: "Nueva Clase",
+        isLoggedIn: request.session.isLoggedIn
     });
 };
 
@@ -31,7 +32,8 @@ exports.get = (request, response, next) => {
 
     response.render('clases', {
         listaClases: clases,
-        titulo: 'Clases'
+        titulo: 'Clases',
+        isLoggedIn: request.session.isLoggedIn
     });
 };
 

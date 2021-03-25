@@ -10,8 +10,8 @@ const app = express();
 const path = require("path");
 
 //Cookie-Parser
-var cookieParser = require("cookie-parser");
-
+const cookieParser = require("cookie-parser");
+const session = require('express-session');
 
 //Motor de vista EJS
 app.set('view engine', 'ejs');
@@ -20,9 +20,18 @@ app.set('views', 'views');
 const misRutas = require("./routes/clases");
 const rutasUsers = require("./routes/users");
 
-//Body Parser
+//Middleware
+//Para acceder a los datos de las formas
 app.use(bodyParser.urlencoded({extended: false}));
+//Para acceder a los valores de las cookies
 app.use(cookieParser());
+//Para trabajar con sesiones
+app.use(session({
+    secret: 'delfincitobebe', 
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
 
 //Para acceder a los recursos de la carpeta public.
 app.use(express.static(path.join(__dirname, '/public')));
