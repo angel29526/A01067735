@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-  <html>
-
-    <%- include('includes/head.ejs') %>
-
-    <body>
-
-        <%- include('includes/nav.ejs') %>
-
-        <main class="container">
-            <h1>Clases</h1>
-            <% for (let clase of listaClases){ %>   
-              <div class="card small">
-                <div class="card-image waves-effect waves-block waves-light" >
-                  <img class="activator" src="https://www.wallpapertip.com/wmimgs/31-314750_saber-fate-stay-night.jpg">
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+    
+<main class="container">
+  <h1><%= titulo %></h1>
+  <div class="row">
+              <% for (let clase of listaClases){ %>   
+                <div class="col s12 m4 l3">
+                  <div class="card small">
+                    <div class="card-image waves-effect waves-block waves-light" >
+                      <img class="activator" src="<%= clase.imagen %>">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4"><%= clase.nombre %><i class="material-icons right" >more_vert</i></span>
+                      <p><a href="#">...</a></p>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4"><%= clase.nombre %><i class="material-icons right">close</i></span>
+                      <p>Fuente de la imágen: <%= clase.imagen %></p>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4"><%= clase %><i class="material-icons right" >more_vert</i></span>
-                  <p><a href="#">...</a></p>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4"><%= clase %><i class="material-icons right">close</i></span>
-                  <p>Here is some more information about this class.</p>
-                </div>
-              </div>
-            <% } %>
-        </main>
+          <% } %>
+  </div>
+</main>
 
-        <%- include('includes/footer.ejs') %>
-
-     <script type="text/javascript" src="/js/materialize.min.js"></script>
-
-    </body>
-  </html>
+<%- include('includes/footer.ejs') %>     

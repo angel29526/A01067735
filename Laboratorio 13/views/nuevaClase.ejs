@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-  <html>
+<%- include('includes/head.ejs') %>
+<%- include('includes/nav.ejs') %>
+  
+  <main class="container">
+    <h2>Nueva clase</h2>
+    <h3>Agregar nueva clase</h3>
+      <form action='nueva-clase' method='POST'>
+        <input type='text' name='nombre_clase'>
+        <input type="text" name="imagen_clase">
+        <input type='submit' value='Guardar Clase'>
+      </form>
+  </main>
 
-    <%- include('includes/head.ejs') %>
-
-    <body>
-
-        <%- include('includes/nav.ejs') %>
-
-        <main class="container">
-            <h2>Nueva clase</h2>
-            <h3>Agregar nueva clase</h3>
-            <form action='nueva-clase' method='POST'><input type='text' name='nombre_clase'><input type='submit' value='Submit'></form>
- 
-        </main>
-
-        <%- include('includes/footer.ejs') %>
-
-     <script type="text/javascript" src="/js/materialize.min.js"></script>
-
-    </body>
-  </html>
+<%- include('includes/footer.ejs') %>
 

@@ -9,7 +9,7 @@ exports.getNuevaClase = (request, response, next)=>{
 
 exports.postNuevaClase = (request, response, next)=>{
     console.log(request.body.nombre_clase);
-    const nueva_clase = new Clase(request.body.nombre_clase);
+    const nueva_clase = new Clase(request.body.nombre_clase, request.body.imagen_clase);
     nueva_clase.save();
     console.log(fetchAll());
     response.redirect("/clases");
