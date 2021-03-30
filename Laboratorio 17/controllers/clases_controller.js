@@ -11,12 +11,11 @@ exports.getNuevaClase = (request, response, next)=>{
 exports.postNuevaClase = (request, response, next)=>{
     console.log(request.body.nombre_clase);
     const nueva_clase = new Clase(request.body.nombre_clase, request.body.imagen_clase);
-    nueva_clase.save();
-    console.log(fetchAll());
-
-    response.setHeader("Set-Cookie", ["ultima_clase=" + nueva_clase.nombre +"; HttpOnly"]);
-
-    response.redirect("/clases");
+    nueva_clase.save()
+        .then(() => {
+            response.setHeader("Set-Cookie", ["ultima_clase=" + nueva_clase.nombre +"; HttpOnly"]);
+            response.redirect("/clases");
+        }).catch(err => console.log(err));
 };
 
 exports.get = (request, response, next) => {
