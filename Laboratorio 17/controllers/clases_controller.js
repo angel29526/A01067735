@@ -20,9 +20,7 @@ exports.postNuevaClase = (request, response, next)=>{
 };
 
 exports.get = (request, response, next) => {
-    const clases = Clase.fetchAll();
-
-
+    
     console.log("La última clase registrada fue: " + request.get("Cookie"));
     //Sin cokie-parser
     console.log(request.get("Cookie").split("=")[1])
@@ -30,11 +28,26 @@ exports.get = (request, response, next) => {
     console.log(request.cookies);
     console.log(request.cookies.ultima_clase);
 
-    response.render('clases', {
-        listaClases: clases,
-        titulo: 'Clases',
-        isLoggedIn: request.session.isLoggedIn
-    });
+    Clase.fetchAll()
+        .then(([rows, fieldData]) => {
+            const clases = [];
+            for (let clase of rows){
+                clases.push({
+                    nombre: clase.nombre, 
+                    imagen: clase.imagen
+                });
+            }
+            console.log(clases);
+            response.render('clases', {
+                listaClases: clases,
+                titulo: 'Clases',
+                isLoggedIn: request.session.isLoggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });   
+
 };
 
 /*
