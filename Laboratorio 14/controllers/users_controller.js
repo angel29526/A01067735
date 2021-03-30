@@ -12,7 +12,7 @@ exports.postLogin = (request, response, next) =>{
     response.redirect("/clases")
 };
 
-exports.logout = (request, response, next) => {
+exports.getLogout = (request, response, next) => {
     request.session.destroy(() => {
         response.redirect('/clases'); //Este código se ejecuta cuando la sesión se elimina.
     });
