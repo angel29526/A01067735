@@ -47,6 +47,6 @@ app.get("/lab",(request, response, next)=>{
 
 app.use("/users/", rutasUsers);
 
-app.use("/", misRutas);
+app.use("/clases", misRutas);
             
 app.listen(3000);

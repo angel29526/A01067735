@@ -21,4 +21,10 @@ module.exports = class Clase {
         return db.execute('SELECT * FROM clases')
                       
     }
+
+    static fetchOne(id) {
+        
+        return db.execute('SELECT * FROM clases WHERE id=?', [id]);
+                      
+    }
 }

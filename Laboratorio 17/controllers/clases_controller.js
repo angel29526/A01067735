@@ -41,6 +41,23 @@ exports.get = (request, response, next) => {
 
 };
 
+exports.getClase = (request, response, next) => {
+    const id = request.params.clase_id;
+    Clase.fetchOne(id)
+        .then(([rows, fieldData]) => {
+            response.render('clases', {
+                listaClases: rows,
+                titulo: 'Clase',
+                isLoggedIn: request.session.isLoggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });   
+
+};
+
+
 /*
 ¿Qué beneficios encuentras en el estilo MVC?
 Todos, permitirá realizar cambios de forma maravillosa dado que estamos haciendo uso de código lasaña. Nice.
