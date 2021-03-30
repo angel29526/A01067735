@@ -30,16 +30,8 @@ exports.get = (request, response, next) => {
 
     Clase.fetchAll()
         .then(([rows, fieldData]) => {
-            const clases = [];
-            for (let clase of rows){
-                clases.push({
-                    nombre: clase.nombre, 
-                    imagen: clase.imagen
-                });
-            }
-            console.log(clases);
             response.render('clases', {
-                listaClases: clases,
+                listaClases: rows,
                 titulo: 'Clases',
                 isLoggedIn: request.session.isLoggedIn
             });
