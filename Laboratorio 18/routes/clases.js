@@ -1,18 +1,20 @@
 const express = require('express');
 
+const isAuth = require('../util/is-auth');
+
 const router = express.Router();
 
 const path = require("path");
 
 const clasesController = require('../controllers/clases_controller');
 
-router.get('/nueva-clase', clasesController.getNuevaClase);
+router.get('/nueva-clase', isAuth, clasesController.getNuevaClase);
 
-router.post("/nueva-clase", clasesController.postNuevaClase);
+router.post("/nueva-clase", isAuth, clasesController.postNuevaClase);
 
-router.get('/:clase_id', clasesController.getClase);
+router.get('/:clase_id', isAuth ,clasesController.getClase);
 
-router.get('/', clasesController.get);
+router.get('/', isAuth, clasesController.get);
 
 //404
 /*
