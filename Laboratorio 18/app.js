@@ -13,12 +13,18 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require('express-session');
 
+//csurf
+const csrf = require('csurf');
+const csrfProtection = csrf();
+
 //Motor de vista EJS
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const misRutas = require("./routes/clases");
 const rutasUsers = require("./routes/users");
+
+
 
 //Middleware
 //Para acceder a los datos de las formas
@@ -35,6 +41,8 @@ app.use(session({
 
 //Para acceder a los recursos de la carpeta public.
 app.use(express.static(path.join(__dirname, '/public')));
+
+app.use(csrfProtection); 
 
 app.use((request, response, next) => {
     console.log('Middleware!');
