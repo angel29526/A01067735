@@ -23,6 +23,7 @@ app.set('views', 'views');
 
 const misRutas = require("./routes/clases");
 const rutasUsers = require("./routes/users");
+const { response } = require('express');
 
 
 
@@ -42,7 +43,12 @@ app.use(session({
 //Para acceder a los recursos de la carpeta public.
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.use(csrfProtection); 
+app.use(csrfProtection);
+
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+}); 
 
 app.use((request, response, next) => {
     console.log('Middleware!');
