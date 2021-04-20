@@ -30,6 +30,7 @@ const { response } = require('express');
 //Middleware
 //Para acceder a los datos de las formas
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 //Para acceder a los valores de las cookies
 app.use(cookieParser());
 //Para trabajar con sesiones

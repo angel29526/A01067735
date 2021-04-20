@@ -27,4 +27,8 @@ module.exports = class Clase {
         return db.execute('SELECT * FROM clases WHERE id=?', [id]);
                       
     }
+
+    static fetchByName(nombre) {
+        return db.execute("SELECT * FROM clases WHERE nombre LIKE ?", ['%'+nombre+'%']);
+    }
 }

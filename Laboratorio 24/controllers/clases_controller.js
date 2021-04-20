@@ -60,7 +60,16 @@ exports.getClase = (request, response, next) => {
 };
 
 exports.postBuscar = (request, response, next) => {
-    response.status(200).json({message: "Respuesta asíncrona"});
+    console.log(request.body);
+    const nombre = request.body.criteriosBusqueda;
+    Clase.fetchByName(nombre)
+        .then(([rows, fieldData]) => {           
+            console.log(rows);
+            response.status(200).json(rows);
+        })
+        .catch(err => {
+            console.log(err);
+    });   
 };
 
 
