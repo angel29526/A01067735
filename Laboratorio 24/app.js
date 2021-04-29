@@ -7,7 +7,7 @@ console.log("Ya no es necesario reiniciar el 'servidor', ya era hora.");
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const path = require("path");
+const path = require('path');
 
 //Cookie-Parser
 const cookieParser = require("cookie-parser");
@@ -54,6 +54,11 @@ app.use((request, response, next) => {
 app.use((request, response, next) => {
     console.log('Middleware!');
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
+});
+
+app.get('/', (request, response, next) => {
+    console.log(request.session);
+    response.redirect('/users/login');
 });
 
 app.get("/lab",(request, response, next)=>{
