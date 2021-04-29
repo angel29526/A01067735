@@ -50,6 +50,7 @@
           },
   
     }).then(result => {
+        console.log(data);
         return result.json(); //Regresa otra promesa
     }).then(data => {
         //Modificamos el DOM de nuestra página de acuerdo a los datos de la segunda promesa
